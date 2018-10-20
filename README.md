@@ -1,27 +1,25 @@
 # AnagramFinder
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.5.
+This project is developed to find anagrams for a given string in different levels.
 
-## Development server
+## Basic
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+The app takes a string from an input on the screen and dynamically displays a gibberish anagram of that string every time a new letter or symbol is added, along with a button to change the current anagram (a kind of re-roll), using Angular's famous 2-way data binding.
 
-## Code scaffolding
+## Advanced
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+The app will display 10 possible anagrams in a table, and have a feature to favorite some anagrams to not be lost when changing the anagrams (i.e. rerolling).
 
-## Build
+## Master
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+The app will display the results show on a table that can be sorted alphabetically with one click and filtered by given filter strings.
 
-## Running unit tests
+## Impossible
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+The app will figure out whether a given string has any viable anagrams using viable anagrams dictionary lookup. 
 
-## Running end-to-end tests
+For dictionary of viable anagram words, please visit `src/assets/anagrams.txt`
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+## Application 
 
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+To view this application, visit at[Anagram Finder](https://iamsainikhil.github.io/anagram-finder).
