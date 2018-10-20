@@ -13,14 +13,14 @@
 
         <h2 class="title">Advanced</h2>
         <app-loader *ngIf="showLoader"></app-loader>
-        <app-table [data]="advancedAnagrams" (index)="favoriteAnagram($event)"></app-table>
+        <app-table [data]="advancedAnagrams" [level]="'advanced'" (index)="favoriteAnagram($event)"></app-table>
 
         <h2 class="title">Master</h2>
         <app-loader *ngIf="showLoader"></app-loader>
         <button class="button sort" (click)="buildSortedAnagrams('word')" *ngIf="!sortAnagrams">Sort Anagrams Alphabetically (asc)</button>
         <button class="button sort" (click)="buildSortedAnagrams('-word')" *ngIf="sortAnagrams">Sort Anagrams Alphabetically (desc)</button>
-        <app-table *ngIf="!sortAnagrams" [data]="advancedAnagrams" (index)="favoriteAnagram($event)"></app-table>
-        <app-table *ngIf="sortAnagrams" [data]="sortedAnagrams" (index)="favoriteAnagram($event)"></app-table>
+        <app-table *ngIf="!sortAnagrams" [data]="advancedAnagrams" [level]="'master'" (index)="favoriteAnagram($event)"></app-table>
+        <app-table *ngIf="sortAnagrams" [data]="sortedAnagrams" [level]="'master'" (index)="favoriteAnagram($event)"></app-table>
 
         <h2 class="title">Impossible</h2>
         <div class="result" *ngIf="!showLoader">

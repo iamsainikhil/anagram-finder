@@ -8,6 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class TableComponent implements OnInit {
 
   @Input() data: any;
+  @Input() level: string;
   @Output() index: EventEmitter<Number> = new EventEmitter();
 
   constructor() { }

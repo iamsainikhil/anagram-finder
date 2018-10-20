@@ -1,4 +1,4 @@
-<table>
+<table *ngIf="level === 'advanced'">
     <tr>
         <th>Anagrams</th>
         <th>Favorite</th>
@@ -9,5 +9,14 @@
             <span class="message" *ngIf="!anagram.favorite">Favorite this anagram</span>
             <span class="message" *ngIf="anagram.favorite">Remove this anagram from favorites</span>
         </td>
+    </tr>
+</table>
+
+<table *ngIf="level === 'master'">
+    <tr>
+        <th colspan="2">Anagrams</th>
+    </tr>
+    <tr *ngFor="let anagram of data; let i = index">
+        <td>{{anagram.word}}</td>
     </tr>
 </table>
