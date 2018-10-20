@@ -1,5 +1,5 @@
 import { AnagramBuilderService } from './../../services/anagram-builder.service';
-import { Component, AfterViewInit } from '@angular/core';
+import { Component, AfterViewInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-search',

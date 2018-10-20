@@ -26,45 +26,6 @@ input[type="text"] {
 }
 
 
-/* tables */
-
-table,
-td,
-th {
-    border: 1px solid #ddd;
-}
-
-table {
-    border-collapse: collapse;
-    width: 50%;
-    margin: 10px auto;
-}
-
-th,
-td {
-    padding: 15px;
-    text-align: center;
-}
-
-
-/* star icons */
-
-.star::after {
-    content: '☆';
-    font-size: 18px;
-}
-
-.favorite::after {
-    content: '★';
-    font-size: 18px;
-}
-
-.star:hover,
-.favorite:hover {
-    cursor: pointer;
-}
-
-
 /* buttons */
 
 .button {

@@ -1,0 +1,13 @@
+<table>
+    <tr>
+        <th>Anagrams</th>
+        <th>Favorite</th>
+    </tr>
+    <tr *ngFor="let anagram of data; let i = index">
+        <td>{{anagram.word}}</td>
+        <td [ngClass]="{'favorite' : anagram.favorite, 'star': !anagram.favorite}" (click)="favoriteAnagram(i)" id="tip">
+            <span class="message" *ngIf="!anagram.favorite">Favorite this anagram</span>
+            <span class="message" *ngIf="anagram.favorite">Remove this anagram from favorites</span>
+        </td>
+    </tr>
+</table>

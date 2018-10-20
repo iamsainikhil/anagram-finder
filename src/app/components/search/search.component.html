@@ -13,41 +13,14 @@
 
         <h2 class="title">Advanced</h2>
         <app-loader *ngIf="showLoader"></app-loader>
-        <table>
-            <tr>
-                <th>Anagrams</th>
-                <th>Favorite</th>
-            </tr>
-            <tr *ngFor="let anagram of advancedAnagrams; let i = index">
-                <td>{{anagram.word}}</td>
-                <td [ngClass]="{'favorite' : anagram.favorite, 'star': !anagram.favorite}" (click)="favoriteAnagram(i)"></td>
-            </tr>
-        </table>
+        <app-table [data]="advancedAnagrams" (index)="favoriteAnagram($event)"></app-table>
 
         <h2 class="title">Master</h2>
         <app-loader *ngIf="showLoader"></app-loader>
         <button class="button sort" (click)="buildSortedAnagrams('word')" *ngIf="!sortAnagrams">Sort Anagrams Alphabetically (asc)</button>
         <button class="button sort" (click)="buildSortedAnagrams('-word')" *ngIf="sortAnagrams">Sort Anagrams Alphabetically (desc)</button>
-        <table *ngIf="!sortAnagrams">
-            <tr>
-                <th>Anagrams</th>
-                <th>Favorite</th>
-            </tr>
-            <tr *ngFor="let anagram of advancedAnagrams; let i = index">
-                <td>{{anagram.word}}</td>
-                <td [ngClass]="{'favorite' : anagram.favorite, 'star': !anagram.favorite}" (click)="favoriteAnagram(i)"></td>
-            </tr>
-        </table>
-        <table *ngIf="sortAnagrams">
-            <tr>
-                <th>Anagrams</th>
-                <th>Favorite</th>
-            </tr>
-            <tr *ngFor="let anagram of sortedAnagrams; let i = index">
-                <td>{{anagram.word}}</td>
-                <td [ngClass]="{'favorite' : anagram.favorite, 'star': !anagram.favorite}" (click)="favoriteAnagram(i)"></td>
-            </tr>
-        </table>
+        <app-table *ngIf="!sortAnagrams" [data]="advancedAnagrams" (index)="favoriteAnagram($event)"></app-table>
+        <app-table *ngIf="sortAnagrams" [data]="sortedAnagrams" (index)="favoriteAnagram($event)"></app-table>
 
         <h2 class="title">Impossible</h2>
         <div class="result" *ngIf="!showLoader">
