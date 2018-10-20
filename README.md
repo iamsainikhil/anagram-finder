@@ -22,4 +22,4 @@ For dictionary of viable anagram words, please visit `src/assets/anagrams.txt`
 
 ## Application 
 
-To view this application, visit at[Anagram Finder](https://iamsainikhil.github.io/anagram-finder).
+To view this application, visit at [Anagram Finder](https://iamsainikhil.github.io/anagram-finder).
