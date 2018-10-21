@@ -22,7 +22,7 @@ export class SearchComponent implements AfterViewInit {
     ) {}
 
   ngAfterViewInit() {
-    this.anagramBuilderService.getAnagramWords();
+    // this.anagramBuilderService.getAnagramWords();
   }
 
 

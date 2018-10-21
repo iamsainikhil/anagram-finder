@@ -28,7 +28,7 @@
 
         <h2 class="title">Impossible</h2>
         <div class="result" *ngIf="!showLoader">
-            <p *ngFor="let anagram of validAnagrams">{{anagram.word}}</p>
+            <p *ngFor="let anagram of validAnagrams">{{anagram}}</p>
             <p *ngIf="validAnagrams === undefined">No valid anagrams found for the searched string!</p>
         </div>
     </div>
