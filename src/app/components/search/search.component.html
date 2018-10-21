@@ -4,11 +4,15 @@
         <button class="button undo" (click)="reRollAnagram(searchWord)" *ngIf="searchWord.length > 0">Undo</button>
     </div>
 
-    <div class="content" *ngIf="searchWord.length > 0">
+    <div class="content" *ngIf="searchWord.length > 0 || favoriteAnagrams.length > 0">
         <h2 class="title">Basic</h2>
         <app-loader *ngIf="showLoader"></app-loader>
-        <div class="result" *ngIf="!showLoader">
+        <div class="result" *ngIf="!showLoader && anagrams.length > 0">
             <p *ngFor="let anagram of anagrams">{{anagram.word}}</p>
+        </div>
+        <!-- to display any favorite anagrams even if search word is erased-->
+        <div class="result" *ngIf="!showLoader && anagrams.length === 0 && favoriteAnagrams.length > 0">
+            <p *ngFor="let anagram of favoriteAnagrams">{{anagram.word}}</p>
         </div>
 
         <h2 class="title">Advanced</h2>

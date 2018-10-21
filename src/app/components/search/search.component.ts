@@ -35,6 +35,13 @@ export class SearchComponent implements AfterViewInit {
     return 2;
   }
 
+  wordExists(word) {
+    const exists = this.favoriteAnagrams.some(e => {
+      return e.word === word;
+    });
+    return exists;
+  }
+
   /**
  * Function to find anagrams for the given string.
  *
@@ -68,7 +75,16 @@ export class SearchComponent implements AfterViewInit {
             favorite: false
           }
         );
+        // remove duplicate object from anagram if already present in favoriteAnagrams
+        if (this.favoriteAnagrams.length !== 0 && this.wordExists(e)) {
+          this.anagrams.forEach((el, i) => {
+            if (this.anagrams[i].word === e) {
+              this.anagrams.splice(i, 1);
+            }
+          });
+        }
       });
+
       // to not lose favorite anagrams while re-roll
       if (this.favoriteAnagrams.length > 0) {
         // add favorite anagrams at the start of anagrams
